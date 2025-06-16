@@ -1,0 +1,61 @@
+mat-sidenav-container {
+  height: 100%;
+
+  mat-sidenav {
+    max-width: 420px;
+    min-width: 420px;
+    height: 100%;
+  }
+
+  mat-sidenav-content {
+    min-height: 90vh;
+  }
+}
+
+@media (max-width: 600px) {
+  mat-sidenav-container {
+    mat-sidenav {
+      max-width: 600px;
+      min-width: 250px;
+      width: 100%;
+    }
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  .sidebar {
+    padding: 12px;
+    overflow: auto;
+
+    .sidebar-list {
+      margin-top: -4px;
+
+      li {
+        margin-bottom: 4px;
+      }
+    }
+
+    .sidebar-contacts {
+      margin-top: -8px;
+
+      a {
+        color: #0066cc;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  app-tasks {
+    height: 47%;
+  }
+}
+
+

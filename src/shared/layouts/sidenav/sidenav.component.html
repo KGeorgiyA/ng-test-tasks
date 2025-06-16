@@ -1,0 +1,39 @@
+<mat-sidenav-container>
+  <mat-sidenav [disableClose]="true" [opened]="sidenavService.isOpened()" mode="side">
+    <div class="container">
+      <div class="sidebar">
+        <div class="sidebar-header">
+          <h2>Здравствуйте!</h2>
+          <p>Меня зовут <strong>Георгий Кучумов</strong>, я - веб-разработчик. Здесь вы можете ознакомиться с моими работами.</p>
+        </div>
+
+        <div class="sidebar-section">
+          <p>Начал с разработки продающих телеграм-ботов и создания блогов на платформах Joomla и WordPress. Моя первая официальная работа связана с поддержкой информационной системы колледжа, где делил монолит на модули.</p>
+        </div>
+        <div class="sidebar-section">
+          <p>За время работы приобрел опыт работы с брокером сообщений для связи демона-слушателя событий с камер видеонаблюдения. Кроме того, разрабатывал REST API для системы управления обучением (LMS) и мессенджера, а также создавал фронтенд-части для этих решений.</p>
+        </div>
+
+        <h3 class="sidebar-title">Мой стек технологий:</h3>
+        <ul class="sidebar-list">
+          <li>Языки: PHP, JavaScript, TypeScript, C#</li>
+          <li>Фреймворки: Angular, Zend Framework 3</li>
+          <li>Инструменты: Docker, Composer, Git</li>
+          <li>Базы данных: MySQL</li>
+          <li>Сообщения и очереди: RabbitMQ</li>
+          <li>Протоколы и коммуникации: HTTP, TCP/IP, Socket.IO</li>
+        </ul>
+
+        <h3 class="sidebar-title">Контакты</h3>
+        <div class="sidebar-contacts">
+          <p>Telegram: <a href="https://t.me/Georgiy_AK" target="_blank">&#64;Georgiy_AK</a></p>
+          <p>Email: <a href="mailto:drug200221@gmail.com">drug200221&#64;gmail.com</a></p>
+        </div>
+      </div>
+      <app-tasks></app-tasks>
+    </div>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <router-outlet />
+  </mat-sidenav-content>
+</mat-sidenav-container>
