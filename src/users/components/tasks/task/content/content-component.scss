@@ -1,0 +1,9 @@
+.btn-menu {
+  display: none;
+}
+@media (max-width: 925px) {
+  .btn-menu {
+    display: flex;
+    margin-right: 8px;
+  }
+}

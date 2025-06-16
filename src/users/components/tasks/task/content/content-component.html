@@ -1,0 +1,8 @@
+<button (click)="onMenu()" class="btn-menu" mat-icon-button>
+  @if (sidenavService.isOpened()) {
+    <mat-icon>arrow_back</mat-icon>
+  } @else {
+    <mat-icon>menu</mat-icon>
+  }
+</button>
+<p>content works!</p>
