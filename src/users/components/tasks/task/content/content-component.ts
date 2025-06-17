@@ -3,13 +3,14 @@ import { MatIconButton } from '@angular/material/button';
 import { MatIcon } from '@angular/material/icon';
 import { SidenavService } from '../../../../../shared/layouts/sidenav/sidenav.service';
 import { TaskService } from '../../task.service';
-import { ActivatedRoute, Router } from '@angular/router';
+import {ActivatedRoute, Router, RouterOutlet} from '@angular/router';
 
 @Component({
   selector: 'app-content',
   imports: [
     MatIcon,
     MatIconButton,
+    RouterOutlet,
   ],
   templateUrl: './content-component.html',
   styleUrl: './content-component.scss',

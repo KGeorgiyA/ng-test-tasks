@@ -1,9 +1,9 @@
 import { AfterViewChecked, Component, inject } from '@angular/core';
 import { MatSidenav, MatSidenavContainer, MatSidenavContent } from '@angular/material/sidenav';
-import { RouterOutlet } from '@angular/router';
 import { TasksComponent } from '../../../users/components/tasks/tasks.component';
 import { SidenavService } from './sidenav.service';
 import { TaskService } from '../../../users/components/tasks/task.service';
+import { ContentComponent } from '../../../users/components/tasks/task/content/content-component';
 
 @Component({
   selector: 'app-sidenav',
@@ -11,8 +11,8 @@ import { TaskService } from '../../../users/components/tasks/task.service';
     MatSidenavContainer,
     MatSidenav,
     MatSidenavContent,
-    RouterOutlet,
     TasksComponent,
+    ContentComponent,
   ],
   templateUrl: './sidenav.component.html',
   styleUrl: './sidenav.component.scss',

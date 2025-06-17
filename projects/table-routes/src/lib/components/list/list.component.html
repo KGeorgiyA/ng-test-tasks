@@ -1,0 +1,46 @@
+<div class="mat-elevation-z1">
+  <button mat-raised-button routerLink="add" color="primary" (click)="routeService.action.set('add')" style="margin-bottom: 4px; display: block;">
+    <mat-icon>add</mat-icon>
+    Добавить маршрут
+  </button>
+  <table [dataSource]="dataSource" class="mat-elevation-z1" mat-table matSort (matSortChange)="onSortChange($event)">
+    <ng-container matColumnDef="address">
+      <th *matHeaderCellDef mat-header-cell mat-sort-header>Название</th>
+      <td *matCellDef="let element" mat-cell>{{element.address}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="gateway">
+      <th *matHeaderCellDef mat-header-cell mat-sort-header>Шлюз</th>
+      <td *matCellDef="let element" mat-cell>{{element.gateway}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="interface">
+      <th *matHeaderCellDef mat-header-cell mat-sort-header>Интерфейс</th>
+      <td *matCellDef="let element" mat-cell>{{element.interface}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="action-edit">
+      <th *matHeaderCellDef mat-header-cell></th>
+      <td *matCellDef="let element" class="cell-control" mat-cell>
+        <button [routerLink]='[element.uuid, "edit"]' mat-icon-button (click)="routeService.action.set('edit')">
+          <mat-icon color="primary">edit</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="action-delete">
+      <th *matHeaderCellDef mat-header-cell></th>
+      <td *matCellDef="let element" class="cell-control" mat-cell>
+        <button (click)="openDialog(element.uuid)" mat-icon-button>
+          <mat-icon color="warn">remove</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+
+    <tr *matHeaderRowDef="['address', 'gateway', 'interface', 'action-edit', 'action-delete']" mat-header-row></tr>
+    <tr *matRowDef="let row; columns: ['address', 'gateway', 'interface', 'action-edit', 'action-delete']" mat-row></tr>
+  </table>
+  <mat-paginator (page)="onPageChange($event)"
+                 [pageSizeOptions]="[5, 10, 20]"
+                 [length]="dataSource.data.length"></mat-paginator>
+</div>
