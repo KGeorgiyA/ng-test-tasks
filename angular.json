@@ -97,6 +97,42 @@
           }
         }
       }
+    },
+    "table-routes": {
+      "projectType": "library",
+      "root": "projects/table-routes",
+      "sourceRoot": "projects/table-routes/src",
+      "prefix": "t-routes",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:ng-packagr",
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/table-routes/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/table-routes/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular/build:karma",
+          "options": {
+            "tsConfig": "projects/table-routes/tsconfig.spec.json"
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "projects/table-routes/**/*.ts",
+              "projects/table-routes/**/*.html"
+            ],
+            "eslintConfig": "projects/table-routes/eslint.config.js"
+          }
+        }
+      }
     }
   },
   "cli": {

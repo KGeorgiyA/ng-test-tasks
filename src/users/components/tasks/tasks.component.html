@@ -1,11 +1,10 @@
 <mat-tab-group>
   <mat-tab label="Тестовые задания">
     <mat-nav-list>
-      @for (task of tasks; track $index)
-      {
+      @for (task of tasks; track $index) {
         <mat-list-item (click)="onTask(task)"
                        [class.active]="task.id === taskService.activeTaskId()">
-          <app-task [task]="task"></app-task>
+          <span class="title">{{ task.title }}</span>
         </mat-list-item>
       }
     </mat-nav-list>

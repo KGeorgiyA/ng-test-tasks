@@ -1,0 +1,57 @@
+@if (routeService.action() === 'edit') {
+  <h1>Редактирование маршрута</h1>
+} @else if (routeService.action() === 'add') {
+  <h1>Добавление маршрута</h1>
+}
+
+<form (ngSubmit)="save()" [formGroup]="form" class="form">
+  <mat-form-field>
+    <mat-label>Адрес</mat-label>
+    <input formControlName="address" placeholder="255.255.255.255/32" matInput>
+    @if (form.controls.address.hasError('required')) {
+      <mat-error>Укажите адрес</mat-error>
+    }
+    @if (form.controls.address.hasError('pattern')) {
+      <mat-error>Некоректный ввод</mat-error>
+    }
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <mat-label>Маска</mat-label>
+    <input formControlName="mask" placeholder="255.255.255.255" matInput>
+    <mat-hint>^Для начала укажите маску :)</mat-hint>
+    @if (form.controls.mask.hasError('required')) {
+      <mat-error>Укажите маску</mat-error>
+    }
+    @if (form.controls.mask.hasError('pattern')) {
+      <mat-error>Некоректный ввод</mat-error>
+    }
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <mat-label>Шлюз</mat-label>
+    <input formControlName="gateway" placeholder="255.255.255.255" matInput>
+    @if (form.controls.gateway.hasError('required')) {
+      <mat-error>Укажите шлюз</mat-error>
+    }
+    @if (form.controls.gateway.hasError('pattern')) {
+      <mat-error>Некоректный ввод</mat-error>
+    }
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <mat-label>Интерфейс</mat-label>
+    <mat-select formControlName="interface">
+      @for (option of interfaces; track $index) {
+        <mat-option  [value]="option.value">
+          {{ option.value }}
+        </mat-option>
+      }
+    </mat-select>
+    @if (form.controls.interface.hasError('required')) {
+      <mat-error>Укажите интерфейс</mat-error>
+    }
+  </mat-form-field>
+  <br>
+  <button [disabled]="form.disabled||form.invalid" color="primary" mat-raised-button>Сохранить</button>
+</form>
