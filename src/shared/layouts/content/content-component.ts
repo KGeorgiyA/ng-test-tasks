@@ -1,8 +1,8 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { MatIconButton } from '@angular/material/button';
 import { MatIcon } from '@angular/material/icon';
-import { SidenavService } from '../../../../../shared/layouts/sidenav/sidenav.service';
-import { TaskService } from '../../task.service';
+import { SidenavService } from '../sidenav/sidenav.service';
+import { TaskService } from '../../../users/components/tasks/task.service';
 import {ActivatedRoute, Router, RouterOutlet} from '@angular/router';
 
 @Component({
@@ -12,8 +12,27 @@ import {ActivatedRoute, Router, RouterOutlet} from '@angular/router';
     MatIconButton,
     RouterOutlet,
   ],
-  templateUrl: './content-component.html',
-  styleUrl: './content-component.scss',
+  template: `
+    <button (click)="onMenu()" class="btn-menu" mat-icon-button>
+      @if (sidenavService.isOpened()) {
+        <mat-icon>arrow_back</mat-icon>
+      } @else {
+        <mat-icon>menu</mat-icon>
+      }
+    </button>
+    <router-outlet />
+  `,
+  styles: `
+    .btn-menu {
+      display: none;
+    }
+    @media (max-width: 925px) {
+      .btn-menu {
+        display: flex;
+        margin-right: 8px;
+      }
+    }
+  `,
 })
 export class ContentComponent implements OnInit {
   public taskService = inject(TaskService);

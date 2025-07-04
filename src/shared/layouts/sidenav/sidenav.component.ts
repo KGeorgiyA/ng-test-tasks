@@ -3,7 +3,7 @@ import { MatSidenav, MatSidenavContainer, MatSidenavContent } from '@angular/mat
 import { TasksComponent } from '../../../users/components/tasks/tasks.component';
 import { SidenavService } from './sidenav.service';
 import { TaskService } from '../../../users/components/tasks/task.service';
-import { ContentComponent } from '../../../users/components/tasks/task/content/content-component';
+import { ContentComponent } from '../content/content-component';
 
 @Component({
   selector: 'app-sidenav',

@@ -13,8 +13,28 @@ import { Router } from '@angular/router';
     MatNavList,
     MatListItem,
   ],
-  templateUrl: './tasks.component.html',
-  styleUrl: './tasks.component.scss',
+  template: `
+    <mat-tab-group>
+      <mat-tab label="Тестовые задания">
+        <mat-nav-list>
+          @for (task of tasks; track $index) {
+            <mat-list-item (click)="onTask(task)"
+                           [class.active]="task.id === taskService.activeTaskId()">
+              <span class="title">{{ task.title }}</span>
+            </mat-list-item>
+          }
+        </mat-nav-list>
+      </mat-tab>
+    </mat-tab-group>
+  `,
+  styles: `
+    mat-tab-group {
+      height: 100%;
+    }
+    .active {
+      background-color: rgb(223, 223, 223) !important;
+    }
+  `,
 })
 export class TasksComponent {
   public tasks = mockTasks;
