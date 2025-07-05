@@ -16,6 +16,9 @@
     "paths": {
       "table-routes": [
         "./dist/table-routes"
+      ],
+      "to-do-list": [
+        "./dist/to-do-list"
       ]
     },
     "module": "preserve"
@@ -40,6 +43,12 @@
     },
     {
       "path": "./projects/table-routes/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/to-do-list/tsconfig.lib.json"
+    },
+    {
+      "path": "./projects/to-do-list/tsconfig.spec.json"
     }
   ]
 }
