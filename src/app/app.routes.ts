@@ -10,7 +10,12 @@ export const routes: Routes = [
       {
         path: 'table-routes',
         component: RoutesComponent,
-        loadChildren: () => import("../../projects/table-routes/src/lib/routes-module").then(m => m.RoutesModule),
+        loadChildren: () => import("../../projects/table-routes/src/lib/table-routes.routes").then(m => m.routes),
+      },
+      {
+        path: 'to-do-list',
+        component: RoutesComponent,
+        loadChildren: () => import("../../projects/to-do-list/src/lib/to-do-list.routes").then(m => m.routes),
       },
     ],
   },
