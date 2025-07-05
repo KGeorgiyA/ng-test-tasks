@@ -8,7 +8,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { RouteService } from '../../../route.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { IRoute } from '../../../route';
-import { interfaces } from '../../../mocks/mock.interfaces';
+import { mockInterfaces } from '../../../mocks/mock.interfaces';
 import { map, take } from 'rxjs';
 
 @Component({
@@ -102,5 +102,5 @@ export class RouteFormComponent implements OnInit {
     });
   }
 
-  protected readonly interfaces = interfaces;
+  protected readonly interfaces = mockInterfaces;
 }

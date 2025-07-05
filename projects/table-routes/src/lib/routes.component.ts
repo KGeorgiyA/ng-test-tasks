@@ -1,11 +1,10 @@
 import { Component} from '@angular/core';
-
-import { RoutesModule } from './routes-module';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 't-routes-root',
   imports: [
-    RoutesModule,
+    RouterOutlet,
   ],
   template: `<div class="container"><router-outlet /></div>`,
   styles: `

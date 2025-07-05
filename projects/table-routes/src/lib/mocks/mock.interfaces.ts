@@ -1,7 +1,7 @@
-export const interfaces = [
-  { value: 'Внутренняя сеть', },
-  { value: 'Гостевая сеть',  },
-  { value: 'Домашняя сеть', },
+export const mockInterfaces = [
+  { value: 'Внутренняя сеть' },
+  { value: 'Гостевая сеть'  },
+  { value: 'Домашняя сеть' },
   { value: 'Локальная сеть' },
-  { value: 'Подключение Ethernet' }
+  { value: 'Подключение Ethernet' },
 ];

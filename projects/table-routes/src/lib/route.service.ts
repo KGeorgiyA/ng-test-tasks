@@ -4,7 +4,7 @@ import { IRoute } from './route';
 import { mockRoutes } from './mocks/mock.routes';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class RouteService {
   public action = signal('');
@@ -13,7 +13,7 @@ export class RouteService {
 
   public add(route: IRoute) {
     const routes = this.routes$.value;
-    let maxUuid = routes.reduce((max, route) => route.uuid > max ? route.uuid : max, '');
+    const maxUuid = routes.reduce((max, route) => route.uuid > max ? route.uuid : max, '');
     if (maxUuid === '') {
       route.uuid = '1';
     }  else {
@@ -39,7 +39,7 @@ export class RouteService {
   }
 
   public delete(routeId: string) {
-      const routes = this.routes$.value.filter(value => value.uuid !== routeId);
-      this.routes$.next(routes);
+    const routes = this.routes$.value.filter(value => value.uuid !== routeId);
+    this.routes$.next(routes);
   }
 }

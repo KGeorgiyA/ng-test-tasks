@@ -15,10 +15,10 @@ import { IRoute } from '../../route';
 import { RouteService } from '../../route.service';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { YesNoDialogComponent } from '../yes-no-dialog/yes-no-dialog.component';
 import { MatSort, MatSortHeader, Sort } from '@angular/material/sort';
 import { MatPaginator, PageEvent } from '@angular/material/paginator';
 import { Subscription } from 'rxjs';
+import { YesNoDialogComponent } from '../../../../../../src/shared/components/dialogs/yes-no-dialog.component';
 
 @Component({
   selector: 't-routes-list',
